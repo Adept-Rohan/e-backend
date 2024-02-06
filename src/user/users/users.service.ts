@@ -17,7 +17,7 @@ export class UsersService extends KnexBase<
     super(knex);
   }
 
-  async createUser(createUserInput: CreateUserInput): Promise<User | null> {
+  async createUser(createUserInput: CreateUserInput): Promise<User> {
     console.log('🚀 ~ createUser ~ createUserInput:', createUserInput);
 
     if (
@@ -121,7 +121,7 @@ export class UsersService extends KnexBase<
     return updatedUser;
   }
 
-  async deleteUser(id: number) {
+  async deleteUser(id: number): Promise<string> {
     console.log('🚀 ~ deleteUser ~ id:', id);
     const temp = await this.knex('user')
       .select('address', 'email', 'password', 'id', 'phone_number', 'user_name')
