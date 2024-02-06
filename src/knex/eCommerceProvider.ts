@@ -1,6 +1,5 @@
 import { Logger, Provider } from '@nestjs/common';
 import { DEFAULT_KNEX_TOKEN } from './constant';
-import { join } from 'path';
 import { ConfigService } from '@nestjs/config';
 import knex, { Knex } from 'knex';
 
@@ -19,10 +18,10 @@ export const EcommerceProvider: Provider = {
       },
       migrations: {
         tableName: 'knex_migrations',
-        directory: join(__dirname, 'migrations'),
+        directory: 'src/migrations',
       },
       seeds: {
-        directory: join(__dirname, 'seeds'),
+        directory: 'src/seeds',
       },
       log: {
         debug: (m) => logger.debug(m),
