@@ -20,9 +20,9 @@ export default {
   },
   migrations: {
     tableName: 'knex_migrations',
-    directory: './src/migrations',
+    directory: '/migrations',
   },
   seeds: {
-    directory: './src/seeds',
+    directory: '/seeds',
   },
 };
